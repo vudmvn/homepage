@@ -19,7 +19,7 @@ Trang [index.html](index.html) là cổng điều hướng trung tâm, liên k�
 | 3 | **DSAI1005** | Phân tích dữ liệu với Python | Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân | [Mở Trang chủ](https://vudmvn.github.io/Data_Analysis_with_Python/) |
 | 4 | **DBMS** | Hệ quản trị cơ sở dữ liệu và MySQL | Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân | [Mở Trang chủ](https://vudmvn.github.io/dbms-course/) |
 | 5 | **VNU1001** | Nhập môn công nghệ số & ứng dụng AI | Đại học Quốc gia Hà Nội (VNU) | [Mở Trang chủ](https://vudmvn.github.io/VNU-CN-AI/) |
-| 6 | **CP** | 🏆 Cẩm nang Huấn luyện Lập trình Thi đấu (ICPC & OLP) | SLSCM Lab — Khoa FDA, NEU | [Mở Trang chủ](https://vudmvn.github.io/CP/) |
+| 6 | **CP** | 🏆 Cẩm nang Huấn luyện Lập trình Thi đấu (ICPC & OLP) | [SLSCM Lab](https://slscm-lab.github.io/) — Khoa FDA, NEU | [Mở Trang chủ](https://vudmvn.github.io/CP/) |
 
 ---
 
