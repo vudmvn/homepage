@@ -1,5 +1,6 @@
-# 🌐 Homepage — Cổng Học Liệu, Khóa Học & Nội Dung Giảng Dạy
+# 🌐 homepage — Cổng Học Liệu, Khóa Học & Nội Dung Giảng Dạy
 
+> **Trang chủ trực tuyến:** [https://vudmvn.github.io/homepage/](https://vudmvn.github.io/homepage/)  
 > **Giảng viên / Tác giả:** TS. Vũ Đức Minh (`minhvd@neu.edu.vn`)  
 > **Đơn vị công tác:** Khoa Khoa học Dữ liệu và Trí tuệ Nhân tạo (FDA) — Đại học Kinh tế Quốc dân (NEU)  
 > **GitHub Profile:** [github.com/vudmvn](https://github.com/vudmvn)
