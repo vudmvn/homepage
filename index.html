@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cổng Học Liệu & Khóa Học Trực Tuyến - TS. Vũ Đức Minh</title>
+  <meta name="description" content="Cổng thông tin tổng hợp học liệu, đề cương, bài giảng tương tác và trang chủ các khóa học được giảng dạy bởi TS. Vũ Đức Minh (Đại học Kinh tế Quốc dân, SLSCM Lab)." />
+  <meta name="author" content="TS. Vũ Đức Minh (Dr. Duc-Minh Vu)" />
+  <link rel="icon" type="image/png" href="assets/logos/FDA_Logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0b3c68',
+              900: '#082f49',
+            },
+            neu: '#c01d24',
+            vnu: '#005596',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .course-card {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .course-card:hover {
+      transform: translateY(-4px);
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1rem;
+    }
+  </style>
+
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- ================= TOP BANNER ================= -->
+  <aside class="bg-gradient-to-r from-sky-900 via-indigo-900 to-slate-900 text-white text-xs py-2 px-4 border-b border-sky-800/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium">Cổng Học Liệu Mở & Giảng Dạy Trực Tuyến</span>
+        <span class="text-sky-300 hidden sm:inline">•</span>
+        <span class="text-sky-200 hidden sm:inline">Đại học Kinh tế Quốc dân (NEU)</span>
+      </div>
+      <div class="flex items-center gap-4 text-sky-200">
+        <a href="mailto:minhvd@neu.edu.vn" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-[11px]"></i> minhvd@neu.edu.vn
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN NAVIGATION BAR ================= -->
+  <nav class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 glass-nav shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Logos & Title -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <div class="flex items-center gap-2 bg-white dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <img src="assets/logos/NEU_Logo.png" alt="NEU Logo" class="h-8 sm:h-9 w-auto object-contain" title="Đại học Kinh tế Quốc dân (NEU)" onerror="this.style.display='none'" />
+          <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+          <img src="assets/logos/FDA_Logo.png" alt="FDA Logo" class="h-8 sm:h-9 w-auto object-contain" title="Khoa Khoa học Dữ liệu và Trí tuệ Nhân tạo (FDA - NEU)" onerror="this.style.display='none'" />
+          <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+          <img src="assets/logos/SLSCM_logo.jpg" alt="SLSCM Logo" class="h-7 sm:h-8 w-auto object-contain rounded" title="Smart Logistics & Supply Chain Management Lab" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <a href="#" class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5 hover:text-sky-600 transition-colors">
+            <span>Khoá Học & Học Liệu</span>
+            <span class="text-sky-600 dark:text-sky-400 font-mono text-xs px-1.5 py-0.5 rounded bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800">PORTAL</span>
+          </a>
+          <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">TS. Vũ Đức Minh • Khoa KH Dữ liệu & TTNT (FDA)</p>
+        </div>
+      </div>
+
+      <!-- Center Nav Links -->
+      <div class="hidden md:flex items-center gap-1 text-xs font-semibold">
+        <a href="#academicCourses" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i class="fa-solid fa-graduation-cap mr-1"></i> Khóa Học
+        </a>
+        <a href="#quickSummary" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i class="fa-solid fa-table-list mr-1"></i> Bảng Tổng Hợp
+        </a>
+      </div>
+
+      <!-- Theme Toggle & Action -->
+      <div class="flex items-center gap-2">
+        <button 
+          id="themeToggleBtn" 
+          type="button" 
+          aria-label="Chuyển chế độ sáng/tối" 
+          class="p-2 sm:px-3 sm:py-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors flex items-center gap-1.5 text-xs font-medium"
+        >
+          <i id="themeToggleDarkIcon" class="fa-solid fa-moon text-sm hidden"></i>
+          <i id="themeToggleLightIcon" class="fa-solid fa-sun text-sm hidden text-amber-500"></i>
+          <span class="hidden sm:inline" id="themeToggleText">Chế độ</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ================= HERO HEADER ================= -->
+  <header class="relative bg-gradient-to-b from-sky-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 py-12 sm:py-16 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 dark:bg-sky-950/80 dark:text-sky-300 border border-sky-200 dark:border-sky-800 mb-4">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>HỌC LIỆU MỞ CHÍNH THỨC — TS. VŨ ĐỨC MINH</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
+          Cổng Học Liệu & Trang Chủ <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-indigo-600 to-blue-700 dark:from-sky-400 dark:via-cyan-300 dark:to-indigo-400">
+            Các Khóa Học & Nội Dung Giảng Dạy
+          </span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          Tổng hợp toàn bộ chương trình đào tạo chính quy, slide bài giảng tương tác, đề cương chi tiết (syllabus), notebook thực hành và cẩm nang huấn luyện thuật toán.
+        </p>
+
+        <!-- Instructor Meta Pill -->
+        <div class="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm w-fit">
+          <div class="flex items-center gap-2 font-medium text-slate-800 dark:text-slate-200">
+            <i class="fa-solid fa-user-tie text-sky-600 dark:text-sky-400"></i>
+            <span>Giảng viên: <strong>TS. Vũ Đức Minh (Dr. Duc-Minh Vu)</strong></span>
+          </div>
+          <span class="hidden sm:inline text-slate-300 dark:text-slate-700">|</span>
+          <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+            <i class="fa-solid fa-building-columns text-slate-400"></i>
+            <span>Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counters -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 max-w-4xl">
+        <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-600 dark:text-sky-400 font-mono">6</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">Khóa Học & Cẩm Nang</div>
+        </div>
+        <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">2</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">Cơ Sở Đào Tạo (NEU, VNU)</div>
+        </div>
+        <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">100%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">Học Liệu Mở Trực Tuyến</div>
+        </div>
+        <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-500 dark:text-amber-400 font-mono">24/7</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-0.5">Truy Cập Mọi Lúc</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= SECTION 1: ACADEMIC COURSES ================= -->
+  <main id="academicCourses" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-1">
+    
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+          <i class="fa-solid fa-graduation-cap text-sky-600 dark:text-sky-400"></i>
+          <span>Các Khóa Học & Nội Dung Giảng Dạy</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Hệ thống các học phần đào tạo chính khóa tại Đại học Kinh tế Quốc dân, Đại học Quốc gia Hà Nội và cẩm nang huấn luyện thuật toán.
+        </p>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 space-y-3.5">
+      
+      <!-- Search Input -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </div>
+          <input 
+            type="text" 
+            id="searchInput"
+            placeholder="Tìm theo tên môn, mã học phần (DSAI1003, DSAI1002, DBMS, VNU1001...), từ khóa (Python, SQL, AI...)..." 
+            class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
+          />
+          <button id="clearSearch" type="button" class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between sm:justify-end gap-3 text-xs text-slate-500 dark:text-slate-400 font-medium px-1">
+          <span>Khóa học: <strong id="courseCount" class="text-sky-600 dark:text-sky-400 font-mono text-sm">6</strong> kết quả</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5 no-scrollbar text-xs">
+        <button type="button" data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-lg font-semibold whitespace-nowrap transition-all bg-sky-600 text-white shadow-sm">
+          <i class="fa-solid fa-layer-group mr-1.5"></i>Tất cả khóa học (6)
+        </button>
+        <button type="button" data-filter="neu" class="filter-btn px-3.5 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-school mr-1.5 text-red-600"></i>Khoa FDA - NEU (4)
+        </button>
+        <button type="button" data-filter="vnu" class="filter-btn px-3.5 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-building-columns mr-1.5 text-blue-600"></i>ĐHQGHN - VNU (1)
+        </button>
+        <button type="button" data-filter="cp" class="filter-btn px-3.5 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-trophy mr-1.5 text-amber-500"></i>Lập trình thi đấu (CP) (1)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Course Cards Grid -->
+    <div id="courseContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1. DSAI1003 - PYTHON -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-sky-300 dark:hover:border-sky-700 flex flex-col overflow-hidden"
+        data-category="neu"
+        data-keywords="dsai1003 python lập trình cơ bản fundamental programming neu fda vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-amber-400 via-yellow-500 to-emerald-500"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                <i class="fa-brands fa-python text-sm"></i>
+                <span class="font-mono font-bold">DSAI1003</span>
+              </span>
+              <span class="badge-pill bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                <i class="fa-regular fa-clock text-xs"></i> 3 Tín chỉ
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/Fundamental-of-Programming-Concepts-in-Python/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                Các nguyên lý lập trình cơ bản với Python
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Fundamental Programming Concepts in Python
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-red-600"></i>
+              <span>Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Khóa học nền tảng trang bị tư duy giải quyết vấn đề bằng ngôn ngữ Python: Cú pháp, kiểu dữ liệu, cấu trúc rẽ nhánh, vòng lặp, xử lý chuỗi, hàm, đệ quy, lập trình hướng đối tượng (OOP) và xử lý ngoại lệ.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-sky-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>Các kiểu dữ liệu chuẩn, Biểu thức, Điều kiện & Vòng lặp</li>
+                <li>Cấu trúc dữ liệu Python: List, Tuple, Dict, Set & Comprehensions</li>
+                <li>Module, File I/O, OOP Cơ bản & Thực hành thuật toán</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/Fundamental-of-Programming-Concepts-in-Python/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Khóa học (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/Fundamental-of-Programming-Concepts-in-Python/')"
+                class="text-xs text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. DSAI1002 - DSAL -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-sky-300 dark:hover:border-sky-700 flex flex-col overflow-hidden"
+        data-category="neu"
+        data-keywords="dsai1002 dsal cấu trúc dữ liệu giải thuật python data structures algorithms neu fda vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                <i class="fa-solid fa-network-wired text-xs"></i>
+                <span class="font-mono font-bold">DSAI1002</span>
+              </span>
+              <span class="badge-pill bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                <i class="fa-regular fa-clock text-xs"></i> 3 Tín chỉ
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/Datastructures_and_Algorithms_in_Python/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                Cấu trúc dữ liệu và Giải thuật với Python
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Data Structures and Algorithms in Python
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-red-600"></i>
+              <span>Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Nghiên cứu chuyên sâu về phân tích độ phức tạp thời gian/không gian (Big-O), các cấu trúc dữ liệu tuyến tính và phi tuyến, các thuật toán sắp xếp, tìm kiếm và kỹ thuật thiết kế thuật toán cốt lõi.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-indigo-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>Phân tích tiệm cận (Big-O, Big-Omega, Big-Theta)</li>
+                <li>Sắp xếp nâng cao: MergeSort, QuickSort, HeapSort</li>
+                <li>Danh sách liên kết, Ngăn xếp, Hàng đợi, Cây & Bảng băm</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/Datastructures_and_Algorithms_in_Python/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Khóa học (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/Datastructures_and_Algorithms_in_Python/')"
+                class="text-xs text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. DSAI1005 - DATA ANALYSIS -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-sky-300 dark:hover:border-sky-700 flex flex-col overflow-hidden"
+        data-category="neu"
+        data-keywords="dsai1005 data analysis python phân tích dữ liệu pandas numpy matplotlib seaborn neu fda vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                <i class="fa-solid fa-chart-pie text-xs"></i>
+                <span class="font-mono font-bold">DSAI1005</span>
+              </span>
+              <span class="badge-pill bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                <i class="fa-regular fa-clock text-xs"></i> 3 Tín chỉ
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/Data_Analysis_with_Python/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                Phân tích dữ liệu với Python
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Data Analysis with Python
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-red-600"></i>
+              <span>Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Quy trình khai phá và phân tích dữ liệu thực chiến với hệ sinh thái Python: Xử lý mảng đa chiều NumPy, thao tác bảng dữ liệu lớn với Pandas, làm sạch dữ liệu, phân tích khám phá (EDA) và trực quan hóa chuyên nghiệp.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-emerald-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>NumPy Vectorization, Broadcasting & Ma trận</li>
+                <li>Pandas Series, DataFrame, GroupBy, Pivot & Merging</li>
+                <li>Trực quan hóa với Matplotlib & Seaborn, Dự án phân tích thực tế</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/Data_Analysis_with_Python/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Khóa học (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/Data_Analysis_with_Python/')"
+                class="text-xs text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. DBMS - DATABASE SYSTEMS -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-sky-300 dark:hover:border-sky-700 flex flex-col overflow-hidden"
+        data-category="neu"
+        data-keywords="dbms cơ sở dữ liệu mysql sql relational model database systems neu fda vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-cyan-50 text-cyan-700 dark:bg-cyan-950/60 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+                <i class="fa-solid fa-database text-xs"></i>
+                <span class="font-mono font-bold">DBMS</span>
+              </span>
+              <span class="badge-pill bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                <i class="fa-solid fa-code text-xs"></i> Song ngữ VI/EN
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/dbms-course/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                Hệ quản trị cơ sở dữ liệu và MySQL
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Database Systems: Design, Implementation & Management
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-red-600"></i>
+              <span>Khoa KHDL & TTNT (FDA) — Đại học Kinh tế Quốc dân</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Tài liệu học tập toàn diện về hệ quản trị CSDL: Kiến trúc dữ liệu đa tầng, mô hình thực thể liên kết (ER/EER), ánh xạ sang lược đồ quan hệ, chuẩn hóa quan hệ (1NF–BCNF), thực hành ngôn ngữ SQL & tối ưu hóa chỉ mục với MySQL.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-cyan-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>Kiến trúc DBMS, Độc lập dữ liệu & Mô hình quan hệ</li>
+                <li>Thiết kế ERD, Functional Dependencies & Chuẩn hóa dữ liệu</li>
+                <li>Lập trình MySQL: DDL, DML, Truy vấn SELECT, Transactions & Index</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/dbms-course/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Khóa học (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/dbms-course/')"
+                class="text-xs text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. VNU1001 - AI & DIGITAL TECH -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-sky-300 dark:hover:border-sky-700 flex flex-col overflow-hidden"
+        data-category="vnu"
+        data-keywords="vnu1001 công nghệ số trí tuệ nhân tạo ai digital technology artificial intelligence đhqghn vnu vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-sky-400 via-teal-500 to-indigo-600"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+                <i class="fa-solid fa-robot text-xs"></i>
+                <span class="font-mono font-bold">VNU1001</span>
+              </span>
+              <span class="badge-pill bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                <i class="fa-solid fa-bolt text-xs"></i> Tương tác số
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/VNU-CN-AI/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                Nhập môn công nghệ số & ứng dụng AI
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Introduction to Digital Technology & AI Applications
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-blue-600"></i>
+              <span>Đại học Quốc gia Hà Nội (VNU)</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Cổng học liệu số thông minh cho sinh viên: Tổng quan về chuyển đổi số, nền tảng AI hiện đại (GenAI, LLM), tích hợp bài giảng tương tác HTML, hệ thống Quiz tự chấm điểm, sổ tay đề cương và thời khóa biểu 17 mốc học tập.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-sky-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>Bài giảng tương tác & Quiz trắc nghiệm tự chấm trực tuyến</li>
+                <li>Sổ tay đề cương chi tiết & Thời khóa biểu 17 mốc LMS/Zoom</li>
+                <li>Cẩm nang hướng dẫn xử lý lỗi kỹ thuật thường gặp</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/VNU-CN-AI/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Khóa học (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/VNU-CN-AI/')"
+                class="text-xs text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. CP - COMPETITIVE PROGRAMMING HANDBOOK -->
+      <article 
+        class="course-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-amber-400 dark:hover:border-amber-600 flex flex-col overflow-hidden"
+        data-category="cp"
+        data-keywords="cp lập trình thi đấu icpc olp olympic tin học thuật toán slscm neu fda vudmvn"
+      >
+        <div class="h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500"></div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="badge-pill bg-amber-50 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                <i class="fa-solid fa-trophy text-amber-500"></i>
+                <span class="font-mono font-bold">CP</span>
+              </span>
+              <span class="badge-pill bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-200 dark:border-red-800">
+                <i class="fa-solid fa-star text-xs"></i> 57 Chuyên đề
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mb-2">
+              <a href="https://vudmvn.github.io/CP/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+                Cẩm nang Huấn luyện Lập trình Thi đấu (ICPC & OLP)
+              </a>
+            </h2>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 italic">
+              Competitive Programming Handbook & Problemsets
+            </p>
+
+            <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+              <i class="fa-solid fa-building-columns text-amber-600"></i>
+              <span>SLSCM Lab — Khoa KHDL & TTNT (FDA), NEU</span>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Kho tài liệu huấn luyện thuật toán đỉnh cao cho đội tuyển ICPC & Olympic Tin học sinh viên: 57 chuyên đề phân cấp Star Levels, cấu trúc Bộ 3 Tác chiến (Lý thuyết, Template C++20 tối ưu, Bài tập chọn lọc), thư viện 107+ file PDF vector và bộ đề thi OLP kèm lời giải chi tiết.
+            </p>
+
+            <div class="space-y-1.5 mb-5 text-xs text-slate-500 dark:text-slate-400">
+              <div class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-list-check text-amber-500 text-[11px]"></i> Nội dung trọng tâm:
+              </div>
+              <ul class="list-disc list-inside space-y-1 pl-1">
+                <li>30 Chuyên đề One-star: Số học, Bitmask, Hai con trỏ, BFS/DFS, QHĐ cơ bản</li>
+                <li>27 Chuyên đề Two-star: Segment Tree, Fenwick, DSU on Tree, SOS DP, Mo's</li>
+                <li>Thư viện 107+ PDF Vector in ấn & Bộ đề thi OLP có lời giải</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+            <a 
+              href="https://vudmvn.github.io/CP/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white shadow-sm hover:shadow transition-all"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span>Trang chủ Cẩm nang CP (Online)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80"></i>
+            </a>
+
+            <div class="flex items-center justify-end pt-0.5">
+              <button 
+                type="button" 
+                onclick="copyLink('https://vudmvn.github.io/CP/')"
+                class="text-xs text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1.5 transition-colors"
+                title="Sao chép liên kết"
+              >
+                <i class="fa-regular fa-copy"></i>
+                <span>Sao chép liên kết</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="emptyState" class="hidden text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 my-6">
+      <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+      </div>
+      <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1">Không tìm thấy khóa học phù hợp</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto mb-4">
+        Vui lòng thử lại với từ khóa khác hoặc bấm nút bên dưới để hiển thị lại tất cả khóa học.
+      </p>
+      <button 
+        type="button" 
+        onclick="resetFilters()"
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-sky-600 hover:bg-sky-700 text-white transition-all shadow-sm"
+      >
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>Xóa bộ lọc tìm kiếm</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ================= SECTION 2: QUICK NAVIGATION TABLE ================= -->
+  <section id="quickSummary" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 sm:p-8">
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-table-list text-sky-600 dark:text-sky-400"></i>
+            <span>Bảng Tổng Hợp Điều Hướng Nhanh Các Khóa Học</span>
+          </h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Danh mục các học phần chính quy và cẩm nang huấn luyện trực tuyến.</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 uppercase font-semibold text-[11px] tracking-wider border-b border-slate-200 dark:border-slate-700">
+            <tr>
+              <th scope="col" class="py-3 px-4 text-center">STT</th>
+              <th scope="col" class="py-3 px-4">Mã học phần</th>
+              <th scope="col" class="py-3 px-4">Tên khóa học & chương trình</th>
+              <th scope="col" class="py-3 px-4">Đơn vị phụ trách</th>
+              <th scope="col" class="py-3 px-4 text-center">Trang chủ Trực tuyến (Online)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+              <td class="py-3 px-4 text-center font-mono text-slate-400">1</td>
+              <td class="py-3 px-4 font-mono font-bold text-sky-700 dark:text-sky-400">DSAI1003</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                Các nguyên lý lập trình cơ bản với Python
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">Khoa KHDL & TTNT (FDA) — NEU</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/Fundamental-of-Programming-Concepts-in-Python/" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 dark:text-sky-400 font-semibold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+              <td class="py-3 px-4 text-center font-mono text-slate-400">2</td>
+              <td class="py-3 px-4 font-mono font-bold text-indigo-700 dark:text-indigo-400">DSAI1002</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                Cấu trúc dữ liệu và Giải thuật với Python
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">Khoa KHDL & TTNT (FDA) — NEU</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/Datastructures_and_Algorithms_in_Python/" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 dark:text-sky-400 font-semibold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+              <td class="py-3 px-4 text-center font-mono text-slate-400">3</td>
+              <td class="py-3 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400">DSAI1005</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                Phân tích dữ liệu với Python
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">Khoa KHDL & TTNT (FDA) — NEU</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/Data_Analysis_with_Python/" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 dark:text-sky-400 font-semibold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+              <td class="py-3 px-4 text-center font-mono text-slate-400">4</td>
+              <td class="py-3 px-4 font-mono font-bold text-cyan-700 dark:text-cyan-400">DBMS</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                Hệ quản trị cơ sở dữ liệu và MySQL
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">Khoa KHDL & TTNT (FDA) — NEU</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/dbms-course/" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 dark:text-sky-400 font-semibold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+              <td class="py-3 px-4 text-center font-mono text-slate-400">5</td>
+              <td class="py-3 px-4 font-mono font-bold text-sky-700 dark:text-sky-400">VNU1001</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                Nhập môn công nghệ số & ứng dụng AI
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">Đại học Quốc gia Hà Nội (VNU)</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/VNU-CN-AI/" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 dark:text-sky-400 font-semibold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-amber-50/80 dark:hover:bg-amber-950/30 transition-colors bg-amber-50/30 dark:bg-amber-950/10">
+              <td class="py-3 px-4 text-center font-mono text-amber-500">6</td>
+              <td class="py-3 px-4 font-mono font-bold text-amber-700 dark:text-amber-400">CP</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                🏆 Cẩm nang Huấn luyện Lập trình Thi đấu (ICPC & OLP)
+              </td>
+              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">SLSCM Lab — Khoa FDA, NEU</td>
+              <td class="py-3 px-4 text-center">
+                <a href="https://vudmvn.github.io/CP/" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:text-amber-800 dark:text-amber-400 font-bold inline-flex items-center gap-1">
+                  <span>Mở Trang chủ</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-4">
+          <img src="assets/logos/FDA_Logo.png" alt="FDA Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'" />
+          <div>
+            <div class="text-sm font-bold text-slate-900 dark:text-white">
+              TS. Vũ Đức Minh (Dr. Duc-Minh Vu)
+            </div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">
+              Khoa Khoa học Dữ liệu & Trí tuệ Nhân tạo (FDA) — Đại học Kinh tế Quốc dân (NEU)
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+          <a href="#academicCourses" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Khóa Học</a>
+          <a href="#quickSummary" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Bảng Tổng Hợp</a>
+          <a href="mailto:minhvd@neu.edu.vn" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Liên hệ</a>
+          <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Lên đầu trang">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 dark:text-slate-500 gap-2">
+        <div>
+          © 2026 TS. Vũ Đức Minh. Bản quyền học liệu thuộc về giảng viên và các cơ sở đào tạo.
+        </div>
+        <div class="flex items-center gap-2">
+          <span>Học liệu mở trực tuyến</span>
+          <span>•</span>
+          <span>Cập nhật mới nhất</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold py-2.5 px-4 rounded-xl shadow-xl flex items-center gap-2 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"></i>
+    <span id="toastMessage">Đã sao chép liên kết</span>
+  </div>
+
+  <!-- ================= CLIENT JAVASCRIPT ================= -->
+  <script>
+    // ---------- Theme Toggle Script ----------
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeToggleDarkIcon = document.getElementById('themeToggleDarkIcon');
+    const themeToggleLightIcon = document.getElementById('themeToggleLightIcon');
+
+    function updateThemeIcons() {
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleDarkIcon.classList.add('hidden');
+        themeToggleLightIcon.classList.remove('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+    }
+    updateThemeIcons();
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+      updateThemeIcons();
+    });
+
+    // ---------- Course Search & Category Filters ----------
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+    const courseCountEl = document.getElementById('courseCount');
+    const emptyState = document.getElementById('emptyState');
+
+    let currentFilter = 'all';
+
+    function filterCourses() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      if (query.length > 0) {
+        clearSearchBtn.classList.remove('hidden');
+      } else {
+        clearSearchBtn.classList.add('hidden');
+      }
+
+      courseCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const keywords = card.getAttribute('data-keywords') || '';
+        const cardText = card.textContent.toLowerCase();
+
+        const matchesCategory = (currentFilter === 'all') || (category === currentFilter);
+        const matchesQuery = !query || cardText.includes(query) || keywords.toLowerCase().includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      courseCountEl.textContent = visibleCount;
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+    }
+
+    searchInput.addEventListener('input', filterCourses);
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterCourses();
+      searchInput.focus();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-sky-600', 'text-white', 'shadow-sm');
+          b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.add('active', 'bg-sky-600', 'text-white', 'shadow-sm');
+        btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+
+        currentFilter = btn.getAttribute('data-filter');
+        filterCourses();
+      });
+    });
+
+    function resetFilters() {
+      searchInput.value = '';
+      currentFilter = 'all';
+      filterBtns.forEach(b => {
+        if (b.getAttribute('data-filter') === 'all') {
+          b.classList.add('active', 'bg-sky-600', 'text-white', 'shadow-sm');
+          b.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        } else {
+          b.classList.remove('active', 'bg-sky-600', 'text-white', 'shadow-sm');
+          b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        }
+      });
+      filterCourses();
+    }
+
+    // ---------- Toast Notification & Copy Link ----------
+    function copyLink(url) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('Đã sao chép liên kết vào bộ nhớ tạm: ' + url);
+        }).catch(() => {
+          prompt('Sao chép liên kết dưới đây:', url);
+        });
+      } else {
+        prompt('Sao chép liên kết dưới đây:', url);
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
